@@ -1,0 +1,30 @@
+{
+  "name": "starwars-api",
+  "version": "1.0.0",
+  "description": "API with axios and card's of starwars",
+  "main": "'src/app.js'",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julian1david/star-wars-api.git"
+  },
+  "keywords": [
+    "API",
+    "Node",
+    "JS",
+    "HTML",
+    "CSS"
+  ],
+  "author": "@julian1f",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julian1david/star-wars-api/issues"
+  },
+  "homepage": "https://github.com/julian1david/star-wars-api#readme",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
