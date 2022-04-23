@@ -2,7 +2,7 @@
   "name": "starwars-api",
   "version": "1.0.0",
   "description": "API with axios and card's of starwars",
-  "main": "'src/app.js'",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
     
