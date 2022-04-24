@@ -21,9 +21,10 @@ const paintPokemon = (pokemon) => {
         `
     )
 }
+
 const pokemonData = async () => {
-    const pokemonHTMl = document.querySelector(".card-pokemon") 
     try {
+        const pokemonHTMl = document.querySelector(".card-pokemon") 
         const idPokemon = Math.round(Math.random() * (1, 100));
         const API = `https://pokeapi.co/api/v2/pokemon/${idPokemon}`;
         const res = await fetch(API);
@@ -42,8 +43,6 @@ const pokemonData = async () => {
     }
 }
 
-const generatePokemon = () => {
-    pokemonData()
-}
-
-pokemonData()
+const geratePokemon = document.getElementById("generate-pokemon");
+geratePokemon.addEventListener('click',pokemonData);
+document.addEventListener('DOMContentLoaded',pokemonData);
