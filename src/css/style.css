@@ -91,7 +91,7 @@ a{
 .card-pokemon {
     width: 300px;
     min-height: 400px;
-    max-height: 400px;
+    max-height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,15 +100,14 @@ a{
     border: 1px solid #633a35;
     border-radius: 10px;
     padding: 20px;
-    gap: 30px;
+    gap: 14px;
 }
 .card-pokemon img{
     width: 180px;
     max-height: 200px;
 }
 .card-pokemon h2{
-    margin-top: 30px;
-    color: white;
+    color: #ffdd56;
     font-size: 2.4rem;
 }
 .cards-container button{
@@ -156,3 +155,10 @@ footer p{
     color: white;
 }
 
+@media (max-width: 600px){
+    .navbar{
+        padding: 20px;    }
+    .menu{
+        display: none;
+    }
+}
