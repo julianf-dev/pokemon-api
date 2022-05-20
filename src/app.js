@@ -1,5 +1,6 @@
 
 const paintPokemon = (pokemon) => {
+
     return (
         `
         <img src="${pokemon.image}"  alt=${pokemon.name} loading="lazy">
