@@ -111,7 +111,6 @@ const getData = async (busqueda) => {
 }
 
 const  pokemonData = async (response) => {
-    console.log(response);
     try {
         const pokemonContainer = document.querySelector(".card-pokemon");
         const res = await fetch(response)
@@ -132,6 +131,7 @@ const  pokemonData = async (response) => {
 
 search.addEventListener('change', (e) => {
     getData(e.target.value)
+    search.textContent= " "
 })
 
 
