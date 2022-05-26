@@ -93,18 +93,24 @@ async function urlPokemons(pokemons) {
     }
 }
 
+const notFound = () => {
+    pokemonContainer.appendChild("Not found")
+}
 const getData = async (busqueda) => {
-    try{
-        const API = `https://pokeapi.co/api/v2/pokemon/?limit=500`
-        const res = await fetch(API);
-        const data = await res.json();
-        const results = data.results;
-        results.filter(item => {
-            if (item.name.toLowerCase().includes(busqueda.toLowerCase())) {
-                pokemonData(item.url)
-            }
-        })
-    }catch (error){
+    try {
+        if (!busqueda == " ") {
+            const API = `https://pokeapi.co/api/v2/pokemon/?limit=500`
+            const res = await fetch(API);
+            const data = await res.json();
+            const results = data.results;
+            const  {url}   = results.find(item => item.name.toLowerCase().includes(busqueda.toLowerCase())) 
+            pokemonData(url)
+        }
+        else {
+            getDataAleatory()
+        }
+
+    } catch (error) {
         console.log(error);
     }
 
@@ -122,7 +128,9 @@ const pokemonData = async (response) => {
 }
 
 search.addEventListener('change', (e) => {
-    getData(e.target.value)
+    const currentValue = e.target.value;
+    pokemonContainer.innerHTML = ""
+    getData(currentValue)
 })
 
 
