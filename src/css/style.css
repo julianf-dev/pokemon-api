@@ -12,18 +12,14 @@ html{
     font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
 }
-main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 a{
     text-decoration: none; 
     color: white;
 }
 .navbar{
     width: 100%;
-    height: 8vh;
+    min-height: 8vh;
     background-color: #1d1c21;
     text-align: center;
     display: flex;
@@ -34,7 +30,8 @@ a{
 }
 
 .navbar__input{
-    width: 200px;
+    min-width: 120px;
+    width: 300px;
     background-color: transparent;
     color: white;
     border: 1px solid #ffdd56;
@@ -80,13 +77,13 @@ a{
 
 .cards-container{
     background: linear-gradient(90deg, rgba(11,31,63,1) 0%, rgba(56,7,41,1) 100%, rgba(0,212,255,1) 100%);
+    padding: 20px;
     width: 100%;
     min-height: 84vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
     gap: 30px;
+    justify-content: center;
 }
 .card-pokemon {
     width: 300px;
@@ -110,8 +107,9 @@ a{
     color: #ffdd56;
     font-size: 2.4rem;
 }
-.cards-container button{
-    padding: 10px;
+.button{
+    min-width: 120px;
+    padding: 8px;
     background-color: transparent;
     border: 1px solid #633a35;
     color: #ffdd56;
@@ -157,7 +155,11 @@ footer p{
 
 @media (max-width: 600px){
     .navbar{
-        padding: 20px;    }
+        padding: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
     .menu{
         display: none;
     }
