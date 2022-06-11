@@ -13,14 +13,21 @@ Mira **[Pokemon-API](https://github.com/julian1david/pokemon-api)** para conocer
 git clone https://github.com/julian1david/pokemon-api
 ```
 
-Inicia el index.html  tu navegador
+```
+    npm install
+```
 
+```
+    npm run dev
+```
 
 ## Construido con 🛠️
 
-* JavaScript 
+* Vainilla JavaScript 
 * HTML
 * CSS
+* SASS
+* VITE
 
 ## Contribuyendo 🖇️
 
