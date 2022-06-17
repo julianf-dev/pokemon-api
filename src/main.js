@@ -8,7 +8,6 @@ import {pokemonAleatory} from './utils/pokemonAleatory'
 import pokemons from './utils/pokemons'
 
 search.addEventListener('change', (e) => {
-    pokemonContainer.innerHTML = " ";
     const currentValue = e.target.value;
     searchData(currentValue);
 })

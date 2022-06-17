@@ -1,21 +1,19 @@
 import {POKEMON_API} from './API';
 import { fetchData } from "./getData";
 
-import notFound from '../pages/notFound'
 import paintPokemon from '../pages/paintPokemon';
 import { pokemonContainer } from '../components/nodos';
+import pokemons from './pokemons';
 
 const searchData = async (busqueda) => {
     try {
-        
+        pokemonContainer.innerHTML = " ";        
         if (!busqueda == " ") {
-            
             const data =  await fetchData(`${POKEMON_API}/${busqueda.toLowerCase()}`)
-            pokemonContainer.innerHTML = ""
             paintPokemon(data);
         }
         else {
-            notFound()
+            pokemons();
         }
 
     } catch (error) {
