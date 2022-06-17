@@ -2,7 +2,7 @@ import {POKEMON_API} from './API';
 import { fetchData } from "./getData";
 
 import notFound from '../pages/notFound'
-import paintPokemon from '../components/paintPokemon';
+import paintPokemon from '../pages/paintPokemon';
 import { pokemonContainer } from '../components/nodos';
 
 const searchData = async (busqueda) => {

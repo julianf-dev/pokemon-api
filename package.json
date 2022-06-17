@@ -25,6 +25,7 @@
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "sass": "^1.52.3",
     "vite": "^2.9.9"
   },
   "dependencies": {

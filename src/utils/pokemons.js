@@ -2,7 +2,7 @@ import {POKEMON_API} from './API';
 
 import { fetchData } from "./getData";
 
-import paintPokemon from '../components/paintPokemon';
+import paintPokemon from '../pages/paintPokemon';
 
 async function pokemons(){
     try {
@@ -20,7 +20,6 @@ async function urlPokemons(pokemons) {
     try {
         const data = await fetchData(pokemons)
         paintPokemon(data);
-        console.log(data);
     }
     catch (error) {
         console.log(error);

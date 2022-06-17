@@ -1,6 +1,7 @@
-import divNode from './divNode';
-import { pokemonContainer } from './nodos';
+import divNode from '../components/divNode';
+import { pokemonContainer } from '../components/nodos';
 
+import '../styles/paintPokemon.scss'
 
 function paintPokemon(pokemon) {
 
