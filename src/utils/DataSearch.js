@@ -1,19 +1,19 @@
 import {POKEMON_API} from './API';
 import { fetchData } from "./getData";
 
-import paintPokemon from '../pages/paintPokemon';
-import { pokemonContainer } from '../components/nodos';
-import pokemons from './pokemons';
+import { PokemonView } from '../pages/PokemonView';
+import { pokemonContainer } from '../components/Nodos';
+import { Pokemons } from './Pokemons';
 
-const searchData = async (busqueda) => {
+const DataSearch = async (busqueda) => {
     try {
         pokemonContainer.innerHTML = " ";        
         if (!busqueda == " ") {
             const data =  await fetchData(`${POKEMON_API}/${busqueda.toLowerCase()}`)
-            paintPokemon(data);
+            PokemonView(data);
         }
         else {
-            pokemons();
+            Pokemons();
         }
 
     } catch (error) {
@@ -21,4 +21,4 @@ const searchData = async (busqueda) => {
     }
 }
 
-export default searchData;
+export  { DataSearch };

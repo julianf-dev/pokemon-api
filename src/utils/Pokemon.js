@@ -1,15 +1,14 @@
-import {POKEMON_API} from './API';
+import { POKEMON_API } from './API';
 import { fetchData } from "./getData";
 
-import paintPokemon from '../pages/paintPokemon';
-import { paintButtons } from '../pages/paintButtons';
+import { PokemonView } from '../pages/PokemonView';
 
-import {pokemonContainer} from '../components/nodos'
-
+import {pokemonContainer } from '../components/Nodos';
+import { Buttons } from '../pages/Buttons'
 
 let currentPokemon;
 
-export const pokemonAleatory = async (id) => {
+const Pokemon = async (id) => {
     try {
         const idPokemon = Math.round(Math.random() * (1, 200));
         if (id) {
@@ -17,13 +16,14 @@ export const pokemonAleatory = async (id) => {
         }
         else{
             currentPokemon = await fetchData(`${POKEMON_API}/${idPokemon}`);
-            console.log(currentPokemon.id);
         }
         pokemonContainer.innerHTML = " ";
-        paintPokemon(currentPokemon);
-        paintButtons(currentPokemon);
+        PokemonView(currentPokemon);
+        Buttons(currentPokemon)
 
     } catch (error) {
         console.log(error);
     }
 }
+
+export { Pokemon }

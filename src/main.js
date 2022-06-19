@@ -1,22 +1,29 @@
-import {search, generatePokemon, pokemonContainer } from './components/nodos';
+import {search, generatePokemon,buttonsContainer } from './components/Nodos';
 
 import './styles/style.scss';
-import './styles/buttons.scss';
 
-import searchData from './utils/searchPokemon'
-import {pokemonAleatory} from './utils/pokemonAleatory'
-import pokemons from './utils/pokemons'
+import { DataSearch} from './utils/DataSearch'
+import { Pokemon } from './utils/Pokemon'
+import { Pokemons } from './utils/Pokemons'
+
+let page = 180;
+
 
 search.addEventListener('change', (e) => {
+    if (buttonsContainer){
+        buttonsContainer.remove()
+    }
     const currentValue = e.target.value;
-    searchData(currentValue);
+    DataSearch(currentValue);
 })
 
-
 generatePokemon.addEventListener('click', () => {
-    pokemonAleatory()
+    if (buttonsContainer){
+        buttonsContainer.remove()
+    }
+    Pokemon()
 });
 
-
-
-document.addEventListener('DOMContentLoaded', pokemons); 
+document.addEventListener('DOMContentLoaded', () => {
+    Pokemons(page);
+}); 

@@ -1,5 +1,5 @@
 
-const divNode = ({
+const NodeDiv = ({
     property: characteristic,
     nameProperty: paragraph,
 
@@ -15,4 +15,4 @@ const divNode = ({
     return div;
 }
 
-export default divNode;
+export  { NodeDiv };

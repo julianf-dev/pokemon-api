@@ -2,15 +2,21 @@ import {POKEMON_API} from './API';
 
 import { fetchData } from "./getData";
 
-import paintPokemon from '../pages/paintPokemon';
+import { PokemonView } from '../pages/PokemonView';
+import { Button } from '../components/Button'
 
-async function pokemons(){
+async function Pokemons(page){
     try {
-        const data = await fetchData(`${POKEMON_API}/?limit=20`);
+        let url = `${POKEMON_API}/?offset=${page}&limit=20`;
+        const data = await fetchData(url);    
         const pokemons = data.results;
         pokemons.map(pokemon => {
-                urlPokemons(pokemon.url);
+            urlPokemons(pokemon.url)
         })
+        if (page <= 180){
+            page += 20;
+            Button(page)
+        }
     } catch (error) {
         console.log(error);
     }
@@ -19,11 +25,11 @@ async function pokemons(){
 async function urlPokemons(pokemons) {
     try {
         const data = await fetchData(pokemons)
-        paintPokemon(data);
+        PokemonView(data);
     }
     catch (error) {
         console.log(error);
     }
 }
 
-export default pokemons
+export  { Pokemons }

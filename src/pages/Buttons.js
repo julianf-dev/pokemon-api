@@ -1,15 +1,13 @@
-import {pokemonContainer} from '../components/nodos'
+import {pokemonContainer} from '../components/Nodos'
 
-import { pokemonAleatory } from '../utils/pokemonAleatory'
+import { Pokemon } from '../utils/Pokemon'
 
-import '../styles/buttons.scss'
-
-const paintButtons = (currentPokemon) => {
+const Buttons = (currentPokemon) => {
 
     pokemonContainer.classList.add('search-container');
 
     const divButtons = document.createElement('div');
-    divButtons.classList.add('buttons');
+    divButtons.classList.add('buttons-container');
     const buttonLeft = document.createElement('button');
     buttonLeft.classList.add('button');
     buttonLeft.textContent = "Previous";
@@ -24,18 +22,17 @@ const paintButtons = (currentPokemon) => {
     pokemonContainer.insertAdjacentElement('beforeend',divButtons);
 
     divButtons.addEventListener('click', (e) => {
-       
         if (e.target.id == 'button-left'){
             if(currentPokemon.id == 1){
                 currentPokemon.id = 201;
             }
-            pokemonAleatory(currentPokemon.id - 1)
+            Pokemon(currentPokemon.id - 1)
         }
         if(e.target.id == 'button-right'){
             if(currentPokemon.id === 200){
                 currentPokemon.id = 0;
             }
-            pokemonAleatory(currentPokemon.id + 1)
+            Pokemon(currentPokemon.id + 1)
 
         }
     }
@@ -44,4 +41,4 @@ const paintButtons = (currentPokemon) => {
     return pokemonContainer;
 }
 
-export {paintButtons};
+export { Buttons };

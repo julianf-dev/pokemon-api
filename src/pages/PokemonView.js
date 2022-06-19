@@ -1,14 +1,16 @@
-import divNode from '../components/divNode';
-import { pokemonContainer } from '../components/nodos';
+import { NodeDiv } from '../components/NodeDiv';
+import { pokemonContainer, buttonsContainer } from '../components/Nodos';
+import { Pokemon } from '../utils/Pokemon';
 
 import '../styles/paintPokemon.scss'
 
-function paintPokemon(pokemon) {
+function PokemonView(pokemon) {
 
     const allItems = [];
 
     const article = document.createElement('article')
     article.classList.add('card-pokemon')
+    article.setAttribute('id', pokemon.id)
 
     const title = document.createElement('h2');
     title.textContent = pokemon.name.toUpperCase();
@@ -21,18 +23,18 @@ function paintPokemon(pokemon) {
     info.className = 'pokemon-info'
 
     //Altura
-    const height = divNode({
+    const height = NodeDiv({
         property: pokemon.height,
         nameProperty: 'Height'
     });
 
-    const ability = divNode({
+    const ability = NodeDiv({
         property: pokemon.abilities[0].ability.name,
         nameProperty: 'Ability'
     });
 
     //type
-    const type = divNode({
+    const type = NodeDiv({
         property: pokemon.types[0].type.name,
         nameProperty: 'Type'
     })
@@ -44,10 +46,17 @@ function paintPokemon(pokemon) {
     article.append(image, title, info)
 
     allItems.push(article)
+
+    article.addEventListener('click',(e) => {
+            if (buttonsContainer){
+                buttonsContainer.remove()
+            }
+            Pokemon(pokemon.id)
+    })
     pokemonContainer.append(...allItems)
 
     return pokemonContainer
 }
 
 
-export default paintPokemon;
+export  { PokemonView };
