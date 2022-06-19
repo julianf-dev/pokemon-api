@@ -6,7 +6,7 @@ import { DataSearch} from './utils/DataSearch'
 import { Pokemon } from './utils/Pokemon'
 import { Pokemons } from './utils/Pokemons'
 
-let page = 180;
+let page = 0;
 
 
 search.addEventListener('change', (e) => {
