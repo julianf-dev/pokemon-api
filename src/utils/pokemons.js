@@ -7,7 +7,7 @@ import { Button } from '../components/Button'
 
 async function Pokemons(page){
     try {
-        let url = `${POKEMON_API}/?offset=${page}&limit=20`;
+        const url = `${POKEMON_API}/?offset=${page}&limit=20`;
         const data = await fetchData(url);    
         const pokemons = data.results;
         pokemons.map(pokemon => {
