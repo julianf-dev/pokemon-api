@@ -4,13 +4,13 @@ Genera un pokemon aleatorio.
 
 ## Vista del proyecto 🚀
 
-Mira **[Pokemon-API](https://github.com/julian1david/pokemon-api)** para conocer como funciona el proyecto.
+Mira **[Pokemon-API](https://github.com/julianf-dev/pokemon-api)** para conocer como funciona el proyecto.
 
 
 ### Instalación 🔧
 
 ```
-git clone https://github.com/julian1david/pokemon-api
+git clone https://github.com/julianf-dev/pokemon-api
 ```
 
 ```
@@ -35,7 +35,7 @@ Cualquier contirbución al proyecto es bien recibida !
 
 ## Autor ✒️
 
-* **Julian F**  - [julian1f](https://github.com/julian1david)
+* **Julian F**  - [julian1f](https://github.com/julianf-dev)
 
 
 ## Licencia 📄
@@ -43,4 +43,4 @@ Cualquier contirbución al proyecto es bien recibida !
 Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE](LICENSE) para detalles
 
 ---
-Hecho con ❤️ por [julian1f](https://github.com/julian1david) 😊
+Hecho con ❤️ por [julian1f](https://github.com/julianf-dev) 😊
